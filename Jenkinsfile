@@ -14,7 +14,7 @@ pipeline {
                     sh 'docker run --rm calculatrice'
                 }
             }
-        }
+        
 
         stage('Déployer en production') {
           steps {
@@ -28,6 +28,7 @@ pipeline {
                 }
             }
         }
+    }
 }
     
 
