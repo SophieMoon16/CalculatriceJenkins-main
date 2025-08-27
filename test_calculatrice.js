@@ -13,7 +13,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     .build();
   try {
     // 2. Accéder à l'application de la calculatrice
-    await driver.get("http://localhost:5500");
+    await driver.get("http://localhost:8080");
     // --- Test 1 : Vérifier l'Addition ---
     let number1 = await driver.findElement(By.id("number1"));
     await number1.sendKeys("5");
