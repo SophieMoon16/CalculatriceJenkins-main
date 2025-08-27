@@ -14,8 +14,9 @@ COPY script.js .
 COPY style.css .
 COPY test_calculatrice.js .
 COPY package.json .
+
 # Installer selenium-webdriver + http-server
-RUN npm install -g http-server selenium-webdriver
+RUN npm install http-server selenium-webdriver
 
 # Exposer le port 
 EXPOSE 8081
