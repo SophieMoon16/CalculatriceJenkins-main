@@ -1,9 +1,16 @@
 const { Builder, By, Key } = require("selenium-webdriver");
+const chrome = require("selenium-webdriver/chrome");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 (async function testCalculatrice() {
-  // 1. Démarrage du navigateur
-  let driver = await new Builder().forBrowser("chrome").build();
+  let options = new chrome.Options();
+  options.addArguments("--headless");
+  options.addArguments("--no-sandbox");
+  options.addArguments("--disable-dev-shm-usage");
 
+  let driver = await new Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(options)
+    .build();
   try {
     // 2. Accéder à l'application de la calculatrice
     await driver.get("http://localhost:5500");
