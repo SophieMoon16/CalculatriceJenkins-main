@@ -21,7 +21,7 @@ pipeline {
             script {
               try {
                 input message: 'Voulez-vous déployer en production ?', ok: 'Oui, déployer'
-                sh 'docker run -d --rm -p 5500:8081 calculatrice'
+                sh 'docker run -d -p 5500:8081 calculatrice'
                 } catch (err) {
                 echo "Déploiement annulé par l'utilisateur 🚫"
                 }
