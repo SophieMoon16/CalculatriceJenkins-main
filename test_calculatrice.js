@@ -2,7 +2,10 @@ const { Builder, By, Key } = require("selenium-webdriver");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 (async function testCalculatrice() {
   // 1. Démarrage du navigateur
-  let driver = await new Builder().forBrowser("chrome").build();
+  let driver = await new Builder()
+    .usingServer("http://localhost:4444/wd/hub") // 👉 utilise le Selenium intégré
+    .forBrowser("chrome")
+    .build();
 
   try {
     // 2. Accéder à l'application de la calculatrice
